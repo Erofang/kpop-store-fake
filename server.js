@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const exphbs = require('express-handlebars');
+const db = require('./database')
 
 
 
@@ -9,6 +10,10 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 const homePageRouter = require('./controllers/homePage');
+const registerRouter = require('./controllers/register');
+const loginRouter = require('./controllers/login');
+const adminRouter = require('./controllers/admin');
+const profileRouter = require('./controllers/profile');
 
 
 
@@ -33,8 +38,8 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
-
-
+//static routa na public
+app.use(express.static(__dirname + '/public'));
 
 
 
@@ -42,6 +47,14 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/', homePageRouter);
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
+app.use('/admin', adminRouter);
+app.use('/profile', profileRouter);
+
+
+
+
 
 
 

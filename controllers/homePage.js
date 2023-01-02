@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const Products = require('../models/Products');
 
 
 
 
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
+    const dataMembers = await Products.ShowMembers();
     res.render('homePage', {
         title: 'Kpop-card-store',
-        style: 'homePage.css'
+        style: 'homePage.css',
+        Members: dataMembers
     })
 })
 

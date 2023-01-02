@@ -3,9 +3,9 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.render('register/register', {
-        title: 'Register',
-        style: 'register.css'
+    res.render('admin/admin', {
+        title: 'Admin',
+        style: 'admin/adminHome.css'
     })
 })
 
