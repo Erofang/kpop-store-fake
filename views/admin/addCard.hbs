@@ -1,1 +1,18 @@
-<h1>XDDDDDD</h1>
+<form role="form" action="/admin/addCard" method="post">
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="number" name="price" class="form-control" placeholder="159.99" min="1" step=".01" required></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Popis</label><input type="text" name="image" class="form-control" required></div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <label for="cleni">Druh výrobku:</label>
+                    <select id="cleni" name="id_clena">
+                        <option value="1" name="1">Pizza</option>
+                        <option value="2" name="2">Piti</option>
+                    </select>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+            </form>
