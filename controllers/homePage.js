@@ -6,7 +6,7 @@ const Products = require('../models/Products');
 
 
 router.get('/', async(req, res) => {
-    const dataMembers = await Products.ShowMembers();
+    const dataMembers = await Products.showMembers();
     res.render('homePage', {
         title: 'Kpop-card-store',
         style: 'homePage.css',

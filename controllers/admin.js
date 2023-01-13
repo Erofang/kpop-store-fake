@@ -10,5 +10,21 @@ router.get('/', (req, res) => {
 })
 
 
+router.get('/addCard', (req, res) =>{
+    res.render('admin/addCard', {
+        title: 'Add Card',
+        style: 'admin/addCard.css'
+    })
+})
+
+
+router.post('/addCard', (req, res) =>{
+    try {
+        
+    } catch {
+        throw err;
+    }
+})
+
 
 module.exports = router;
