@@ -1,1 +1,39 @@
-<h1>register</h1>
+<form role="form" action="/register" method="POST">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <!-- Input pro jméno -->
+                  <input type="text" name="name" id="surname" class="form-control input-sm"
+                    placeholder="Jméno" required>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <!-- Input pro příjmení-->
+                  <input type="text" name="adress" id="adress" class="form-control input-sm" placeholder="Příjmení" required>
+                </div>
+              </div>
+            </div>
+             <div class="form-group">
+                  <!-- Input pro tel_číslo-->
+                  <input type="tel" name="tel" id="tel" class="form-control input-sm" placeholder="tel_číslo" required>
+                </div>
+            <div class="form-group">
+              <!-- Input pro email-->
+              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>              
+
+            </div>
+            <div class="form-group">
+              <!-- Input pro heslo-->
+              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Heslo" required>
+            </div>
+
+            <div class="form-group">
+              <!-- Button na odeslání formu-->
+              <input type="submit" value="Register" class="btn btn-info btn-block">
+
+            </div>
+            <!-- Link na registraci-->
+            <a href="login" class="">Už máte účet?</a> 
+         </div>
+        </form>
