@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
         User.register(role, name, tel, email, hashedPassword, adress);
         res.redirect('/login');
     } catch  {
-        res.redirect('/admin');
+        res.redirect('/register');
     }
 })
 
