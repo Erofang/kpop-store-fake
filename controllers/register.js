@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv').config({path:'./.env'});
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const nodemailer = require('nodemailer');
@@ -25,8 +26,8 @@ router.post('/', async (req, res) => {
     port: 465,
     secure: true, 
     auth: {
-      user: 'KpopStore@seznam.cz', 
-      pass: 'tvojemama123', 
+      user: process.env.EMAIL, 
+      pass: process.env.PASSWORD, 
     },
   });
 

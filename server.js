@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv').config({path:'./.env'});
 const hbs = require('hbs');
 const exphbs = require('express-handlebars');
 const db = require('./database')
