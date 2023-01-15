@@ -66,6 +66,19 @@ app.use(passport.session());
 app.use(methoOverride('_method'))
 
 
+app.use((req, res, next) => {
+	res.locals.login = req.isAuthenticated();
+	next();
+  });
+
+  function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()) 
+		return next();
+	res.redirect('/login');
+}
+
+
+
 
 app.use('/', homePageRouter);
 app.use('/register', registerRouter);
