@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Pát 13. led 2023, 20:42
+-- Vytvořeno: Ned 15. led 2023, 18:23
 -- Verze serveru: 10.4.24-MariaDB
 -- Verze PHP: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Databáze: `kpop-store`
+-- Databáze: `kpopjegay`
 --
 
 -- --------------------------------------------------------
@@ -59,9 +59,9 @@ INSERT INTO `cleni` (`id_clena`, `id_skup`, `jmeno`) VALUES
 --
 
 CREATE TABLE `objednavky` (
-  `id_obj` int(11) NOT NULL,
-  `id_zak` int(32) NOT NULL,
-  `id_stavu` int(32) NOT NULL
+  `id_obj` int(64) NOT NULL,
+  `id_zak` int(64) NOT NULL,
+  `id_stavu` int(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -78,40 +78,15 @@ CREATE TABLE `obj_pro` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `prihla_udaje`
---
-
-CREATE TABLE `prihla_udaje` (
-  `id_udaje` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Vypisuji data pro tabulku `prihla_udaje`
---
-
-INSERT INTO `prihla_udaje` (`id_udaje`) VALUES
-(1);
-
--- --------------------------------------------------------
-
---
 -- Struktura tabulky `produkty`
 --
 
 CREATE TABLE `produkty` (
-  `id_pro` int(11) NOT NULL,
-  `id_clena` int(11) NOT NULL,
-  `cena` varchar(32) NOT NULL,
+  `id_pro` int(64) NOT NULL,
+  `id_clena` int(64) NOT NULL,
+  `cena` decimal(64,0) NOT NULL,
   `image` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Vypisuji data pro tabulku `produkty`
---
-
-INSERT INTO `produkty` (`id_pro`, `id_clena`, `cena`, `image`) VALUES
-(1, 8, '29.99', '123456'),
-(2, 2, '145.90', 'asda');
 
 -- --------------------------------------------------------
 
@@ -120,8 +95,8 @@ INSERT INTO `produkty` (`id_pro`, `id_clena`, `cena`, `image`) VALUES
 --
 
 CREATE TABLE `role` (
-  `id_role` int(11) NOT NULL,
-  `nazev` varchar(32) NOT NULL
+  `id_role` int(64) NOT NULL,
+  `nazev` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -130,7 +105,7 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`id_role`, `nazev`) VALUES
 (1, 'admin'),
-(2, 'uzivatel');
+(2, 'zakaznik');
 
 -- --------------------------------------------------------
 
@@ -159,17 +134,9 @@ INSERT INTO `skupiny` (`id_skup`, `jmeno_skup`, `pocet_clenu`) VALUES
 --
 
 CREATE TABLE `stav_obj` (
-  `id_stavu` int(11) NOT NULL,
-  `stav` char(11) NOT NULL
+  `id_stavu` int(64) NOT NULL,
+  `nazev_stavu` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Vypisuji data pro tabulku `stav_obj`
---
-
-INSERT INTO `stav_obj` (`id_stavu`, `stav`) VALUES
-(1, 'vyrizena'),
-(2, 'nevyrizena');
 
 -- --------------------------------------------------------
 
@@ -178,15 +145,28 @@ INSERT INTO `stav_obj` (`id_stavu`, `stav`) VALUES
 --
 
 CREATE TABLE `zakaznici` (
-  `id_zak` int(11) NOT NULL,
-  `id_udaje` int(32) NOT NULL,
-  `id_role` int(32) NOT NULL,
+  `id_zak` int(64) NOT NULL,
+  `id_role` int(64) NOT NULL,
   `jmeno` varchar(64) NOT NULL,
-  `email` varchar(32) NOT NULL,
-  `heslo` varchar(32) NOT NULL,
-  `telefon` int(32) NOT NULL,
-  `adresa` varchar(64) NOT NULL
+  `email` varchar(64) NOT NULL,
+  `telefon` int(64) NOT NULL,
+  `adresa` varchar(64) NOT NULL,
+  `heslo` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Vypisuji data pro tabulku `zakaznici`
+--
+
+INSERT INTO `zakaznici` (`id_zak`, `id_role`, `jmeno`, `email`, `telefon`, `adresa`, `heslo`) VALUES
+(3, 2, 'xxx', 'matous.kader@seznam.cz', 123, 'zemska 661', '$2b$10$6O68BREhbNZIIWSINOc0s.F3H18TESknFJiucUIyzwbC1PGQGovRW'),
+(4, 2, 'xxx', 'matous.kader@seznam.cz', 123, 'zemska 661', '$2b$10$QyaaXPtzy0FBX.FrkpTtGu2jSpL8Q5naGT7E0JrpdrkAC7aiSoD1i'),
+(5, 2, 'xxx', 'matous.kader@seznam.cz', 123, 'zemska 661', '$2b$10$UGMFRar3UR.J3mNAlgfIG.KX6NauN16ph4l64I5qCklNrHxS4ay/a'),
+(6, 2, 'asd', 'matous.kader@seznam.cz', 123, 'asd', '$2b$10$KV6y2HG52u1jh.9HEpMlD.D0WEWFJlXIqJg7thvIdtV4fOCzFPrvy'),
+(7, 2, 'dadad', 'x@x', 123, 'zemska 661', '$2b$10$q8MEyZpBE6NbBQbTEkucJO63oqIfZG7mqJQbvB1hlwnTzjYX33pl.'),
+(8, 2, 'dadad', 'x@x', 123, 'zemska 661', '$2b$10$MVmzns7esOq1Zjk5QiOoOO8ASuiEZL6ircHBbjzvRbmwVGHTIu01W'),
+(9, 2, 'dadad', 'x@x', 123, 'zemska 661', '$2b$10$kjr8ILTi/Sz3CA91aXjkCOsRACmInAn0tergeO7G8SpzzaN6wC74K'),
+(10, 2, 'dadad', 'x@x', 123, 'zemska 661', '$2b$10$AlSTHu7LeC2fBL8.1Dt12.V8Ys8HjtHMJm2M95vRAICC9H/.mefc6');
 
 --
 -- Indexy pro exportované tabulky
@@ -204,28 +184,22 @@ ALTER TABLE `cleni`
 --
 ALTER TABLE `objednavky`
   ADD PRIMARY KEY (`id_obj`),
-  ADD KEY `ahoj6` (`id_zak`),
-  ADD KEY `ahoj7` (`id_stavu`);
+  ADD KEY `zakaznici` (`id_zak`),
+  ADD KEY `stav_obj` (`id_stavu`);
 
 --
 -- Indexy pro tabulku `obj_pro`
 --
 ALTER TABLE `obj_pro`
-  ADD KEY `ahoj8` (`id_pro`),
-  ADD KEY `ahoj9` (`id_obj`);
-
---
--- Indexy pro tabulku `prihla_udaje`
---
-ALTER TABLE `prihla_udaje`
-  ADD PRIMARY KEY (`id_udaje`);
+  ADD KEY `produkty` (`id_pro`),
+  ADD KEY `objednavky` (`id_obj`);
 
 --
 -- Indexy pro tabulku `produkty`
 --
 ALTER TABLE `produkty`
   ADD PRIMARY KEY (`id_pro`),
-  ADD KEY `ahoj4` (`id_clena`);
+  ADD KEY `cleni` (`id_clena`);
 
 --
 -- Indexy pro tabulku `role`
@@ -250,7 +224,7 @@ ALTER TABLE `stav_obj`
 --
 ALTER TABLE `zakaznici`
   ADD PRIMARY KEY (`id_zak`),
-  ADD UNIQUE KEY `id_role` (`id_role`);
+  ADD KEY `role` (`id_role`);
 
 --
 -- AUTO_INCREMENT pro tabulky
@@ -266,25 +240,19 @@ ALTER TABLE `cleni`
 -- AUTO_INCREMENT pro tabulku `objednavky`
 --
 ALTER TABLE `objednavky`
-  MODIFY `id_obj` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pro tabulku `prihla_udaje`
---
-ALTER TABLE `prihla_udaje`
-  MODIFY `id_udaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_obj` int(64) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pro tabulku `produkty`
 --
 ALTER TABLE `produkty`
-  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pro` int(64) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pro tabulku `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_role` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pro tabulku `skupiny`
@@ -296,13 +264,13 @@ ALTER TABLE `skupiny`
 -- AUTO_INCREMENT pro tabulku `stav_obj`
 --
 ALTER TABLE `stav_obj`
-  MODIFY `id_stavu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_stavu` int(64) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pro tabulku `zakaznici`
 --
 ALTER TABLE `zakaznici`
-  MODIFY `id_zak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_zak` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Omezení pro exportované tabulky
@@ -318,28 +286,27 @@ ALTER TABLE `cleni`
 -- Omezení pro tabulku `objednavky`
 --
 ALTER TABLE `objednavky`
-  ADD CONSTRAINT `ahoj6` FOREIGN KEY (`id_zak`) REFERENCES `zakaznici` (`id_zak`),
-  ADD CONSTRAINT `ahoj7` FOREIGN KEY (`id_stavu`) REFERENCES `stav_obj` (`id_stavu`);
+  ADD CONSTRAINT `stav_obj` FOREIGN KEY (`id_stavu`) REFERENCES `stav_obj` (`id_stavu`),
+  ADD CONSTRAINT `zakaznici` FOREIGN KEY (`id_zak`) REFERENCES `zakaznici` (`id_zak`);
 
 --
 -- Omezení pro tabulku `obj_pro`
 --
 ALTER TABLE `obj_pro`
-  ADD CONSTRAINT `ahoj8` FOREIGN KEY (`id_pro`) REFERENCES `produkty` (`id_pro`),
-  ADD CONSTRAINT `ahoj9` FOREIGN KEY (`id_obj`) REFERENCES `objednavky` (`id_obj`);
+  ADD CONSTRAINT `objednavky` FOREIGN KEY (`id_obj`) REFERENCES `objednavky` (`id_obj`),
+  ADD CONSTRAINT `produkty` FOREIGN KEY (`id_pro`) REFERENCES `produkty` (`id_pro`);
 
 --
 -- Omezení pro tabulku `produkty`
 --
 ALTER TABLE `produkty`
-  ADD CONSTRAINT `ahoj4` FOREIGN KEY (`id_clena`) REFERENCES `cleni` (`id_clena`);
+  ADD CONSTRAINT `cleni` FOREIGN KEY (`id_clena`) REFERENCES `cleni` (`id_clena`);
 
 --
 -- Omezení pro tabulku `zakaznici`
 --
 ALTER TABLE `zakaznici`
-  ADD CONSTRAINT `ahoj1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`),
-  ADD CONSTRAINT `ahoj2` FOREIGN KEY (`id_udaje`) REFERENCES `prihla_udaje` (`id_udaje`);
+  ADD CONSTRAINT `role` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

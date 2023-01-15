@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
         const role = 2;
         const hashedPassword = await bcrypt.hash(password, 10);
         User.register(role, name, tel, email, hashedPassword, adress);
-        res.redirect('/login');
+        res.redirect('/emailVerification');
     } catch  {
         res.redirect('/register');
     }

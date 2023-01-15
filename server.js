@@ -19,6 +19,7 @@ const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 const adminRouter = require('./controllers/admin');
 const profileRouter = require('./controllers/profile');
+const emailVerificationRouter = require('./controllers/emailVerification');
 
 
 
@@ -71,6 +72,7 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/admin', adminRouter);
 app.use('/profile', profileRouter);
+app.use('/emailVerification', emailVerificationRouter);
 
 
 
