@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const exphbs = require('express-handlebars');
 const db = require('./database')
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
+const methoOverride = require('method-override')
 
 
 
@@ -42,7 +46,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 
+//session
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		resave: true,
+		saveUninitialized: true,
+	})
+);
 
+// Flash 
+app.use(flash());
+
+// Passport 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methoOverride('_method'))
 
 
 
