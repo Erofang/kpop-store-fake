@@ -72,12 +72,16 @@ app.use((req, res, next) => {
 	next();
   });
 
+  app.use(function (req, res, next) {
+	res.locals.login = req.isAuthenticated();
+	next();
+  });
+
   function isLoggedIn(req, res, next) {
 	if (req.isAuthenticated()) 
 		return next();
 	res.redirect('/login');
 }
-
 
 
 
