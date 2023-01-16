@@ -1,5 +1,4 @@
 
-{{#if login}}
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container">
     <a href="/" class="navbar-brand">Kpop Store</a>
@@ -10,39 +9,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="products">All</a></li>
-            <li><a class="dropdown-item" href="products/:id">Twice</a></li>
-            <li><a class="dropdown-item" href="products/:id">aespa</a></li>
-          </ul>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="profile" class="nav-link active">Profile</a>
-      </li>
-      <li class="nav-item">
-        <form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger" id="tlacitko">Logout <i class="fa-solid fa-right-from-bracket"></i></button></form>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
-{{/if}}
-
-
-{{#unless login}}
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-  <div class="container">
-    <a href="/" class="navbar-brand">Kpop Store</a>
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cards
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="products">All</a></li>
-            <li><a class="dropdown-item" href="products/:id">Twice</a></li>
-            <li><a class="dropdown-item" href="products/:id">aespa</a></li>
+            <li><a class="dropdown-item" href="products/Twice">Twice</a></li>
+            <li><a class="dropdown-item" href="products/aespa">aespa</a></li>
           </ul>
       </li>
     </ul>
@@ -56,35 +24,52 @@
     </ul>
   </div>
 </nav>
-{{/unless}}
+ <section class="register-form">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Přihlášení</h2>
 
+              <form role="form" action="/login" method="POST">
 
-
-
-<form role="form" action="/login" method="POST">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Email</label>
+                  <input type="email" name="email" id="form3Example1cg" class="form-control form-control-lg" />
+                  
                 </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4cg">Heslo</label>
+                <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                
               </div>
-            </div>
-            <div class="form-group">
-              <!-- Input pro email-->
-              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>              
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Přihlásit</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">ještě nemáte účet? <a href="register"
+                    class="fw-bold text-body"><u>Registrovat</u></a></p>
+
+                    {{#if message}}
+							<div class='' id="alert" role='alert'>
+								{{message}}
+								<button type='button'class='close'data-dismiss='alert'aria-label='Close'>
+									<span aria-hidden='true'>×</span>
+								</button>
+							</div>
+						{{/if}}
+
+              </form>
 
             </div>
-            <div class="form-group">
-              <!-- Input pro heslo-->
-              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Heslo" required>
-            </div>
-
-            <div class="form-group">
-              <!-- Button na odeslání formu-->
-              <input type="submit" value="Přihlásit" class="btn btn-info btn-block">
-
-            </div>
-            <!-- Link na registraci-->
-            <a href="register" class="">Ještě nemáte účet?</a>
+          </div>
         </div>
-        <!-- Konec formu-->
-        </form>
+      </div>
+    </div>
+  </div>
+</section>

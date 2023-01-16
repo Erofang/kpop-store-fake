@@ -1,39 +1,84 @@
-<form role="form" action="/register" method="POST">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <!-- Input pro jméno -->
-                  <input type="text" name="name" id="surname" class="form-control input-sm"
-                    placeholder="Jméno" required>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container">
+    <a href="/" class="navbar-brand">Kpop Store</a>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="products">All</a></li>
+            <li><a class="dropdown-item" href="products/Twice">Twice</a></li>
+            <li><a class="dropdown-item" href="products/aespa">aespa</a></li>
+          </ul>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="login" class="nav-link">Login</a>
+      </li>
+      <li class="nav-item">
+        <a href="register" class="nav-link">Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="register-form">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Registrace</h2>
+
+              <form role="form" action="/register" method="POST">
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Jméno</label>
+                  <input type="text" name="jmeno" id="form3Example1cg" class="form-control form-control-lg" required/>
+                  
                 </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Příjmení</label>
+                  <input type="text" name="prijmeni" id="form3Example1cg" class="form-control form-control-lg" required/>
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Email</label>
+                  <input type="email" name="email" id="form3Example1cg" class="form-control form-control-lg" required/>
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3cg">Telefon</label>
+                  <input type="number" name="mobil" id="form3Example3cg" class="form-control form-control-lg" min="100000000" max="999999999" required/>
+                  
+                </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4cg">Heslo</label>
+                <input type="password" name="heslo" id="form3Example4cg" class="form-control form-control-lg" required/>
+                
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <!-- Input pro příjmení-->
-                  <input type="text" name="adress" id="adress" class="form-control input-sm" placeholder="Příjmení" required>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Registrovat</button>
                 </div>
-              </div>
-            </div>
-             <div class="form-group">
-                  <!-- Input pro tel_číslo-->
-                  <input type="tel" name="tel" id="tel" class="form-control input-sm" placeholder="tel_číslo" required>
-                </div>
-            <div class="form-group">
-              <!-- Input pro email-->
-              <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>              
+
+                <p class="text-center text-muted mt-5 mb-0">už máte účet? <a href="login"
+                    class="fw-bold text-body"><u>Přihlásit</u></a></p>
+
+              </form>
 
             </div>
-            <div class="form-group">
-              <!-- Input pro heslo-->
-              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Heslo" required>
-            </div>
-
-            <div class="form-group">
-              <!-- Button na odeslání formu-->
-              <input type="submit" value="Register" class="btn btn-info btn-block">
-
-            </div>
-            <!-- Link na registraci-->
-            <a href="login" class="">Už máte účet?</a> 
-         </div>
-        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

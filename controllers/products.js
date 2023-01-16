@@ -14,6 +14,15 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/Twice', async (req, res) => {
+    const data = await Products.showTwice();
+    res.render('products/productsTwice', {
+        title: ' Twice Cards',
+        style: 'products.css',
+        cards: data 
+    })
+})
+
 
 
 module.exports = router;

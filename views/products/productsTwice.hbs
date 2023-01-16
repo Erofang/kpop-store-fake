@@ -24,6 +24,15 @@
     </ul>
   </div>
 </nav>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
 {{/if}}
 
 
@@ -37,8 +46,8 @@
             Cards
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="products">All</a></li>
-            <li><a class="dropdown-item" href="products/Twice">Twice</a></li>
+            <li><a class="dropdown-item" href="/products">All</a></li>
+            <li><a class="dropdown-item" href="/products/Twice">Twice</a></li>
             <li><a class="dropdown-item" href="products/aespa">aespa</a></li>
           </ul>
       </li>
@@ -53,6 +62,17 @@
     </ul>
   </div>
 </nav>
+{{#each cards}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src='/productsImage/{{this.image}}' alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.jmeno}}</h5>
+    <p class="card-text">{{this.jmeno_skup}}</p>
+    <p class="card-text">{{this.cena}}$</p>
+    <a href="#" class="btn btn-primary">ADD</a>
+  </div>
+</div>
+{{/each}}
 {{/unless}}
 
 
