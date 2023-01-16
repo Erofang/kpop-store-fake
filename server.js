@@ -15,6 +15,7 @@ const methoOverride = require('method-override')
 
 const app = express();
 const homePageRouter = require('./controllers/homePage');
+const productsRouter = require('./controllers/products');
 const registerRouter = require('./controllers/register');
 const loginRouter = require('./controllers/login');
 const adminRouter = require('./controllers/admin');
@@ -81,6 +82,7 @@ app.use((req, res, next) => {
 
 
 app.use('/', homePageRouter);
+app.use('/products', productsRouter)
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/admin', adminRouter);
