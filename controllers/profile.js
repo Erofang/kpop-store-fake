@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     let data = await User.userProfile(id)
     res.render('profile/profile', {
         title: 'Profil',
-        style: 'profile/profileHome.css',
+        style: 'homePage.css',
         profile: data[0],
     })
 });

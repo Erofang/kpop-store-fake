@@ -33,18 +33,35 @@
                        
                     </ul>
                 </div>
-            
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/profile" class="nav-link active">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger" id="tlacitko">Logout <i class="fa-solid fa-right-from-bracket"></i></button></form>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </nav>
+    <!-- Close Header -->
 
 
 
-<div class="container py-5">
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="row">
+  <!-- Start Content -->
+    <div class="container py-5">
+                <div class="row" style="margin: 0 auto">
                   {{#each cards}}
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
@@ -52,27 +69,19 @@
                                 <img class="card-img rounded-0 img-fluid" src="/productsImage/{{this.image}}">
                             </div>
                             <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Oupidatat non</a>
+                                <a class="h3 text-decoration-none">{{this.jmeno}}</a>
                                 <p class="text-center mb-0">$250.00</p>
                             </div>
                         </div>
                     </div>
-                    {{/each}}    
+                    {{/each}}
+                    
             </div>
+
+
+        
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- End Content -->
 
 
 {{/if}}
