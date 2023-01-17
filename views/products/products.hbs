@@ -8,9 +8,11 @@
             Cards
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/products">All</a></li>
-            <li><a class="dropdown-item" href="/products/Twice">Twice</a></li>
-            <li><a class="dropdown-item" href="/products/aespa">aespa</a></li>
+            {{#each cards}}
+            <li><a class="dropdown-item" href="/products/{{this.id_skup}}">{{this.jmeno_skup}}</a></li>
+            {{/each}}
+            {{!-- <li><a class="dropdown-item" href="/products/Twice">Twice</a></li>
+            <li><a class="dropdown-item" href="/products/aespa">aespa</a></li> --}}
           </ul>
       </li>
     </ul>
@@ -25,6 +27,23 @@
   </div>
 </nav>
 {{#each cards}}
+<div class="card-group" >
+  <div class="card">
+    <img src="/productsImage/{{this.image}}" class="card-img-top"
+      alt="Hollywood Sign on The Hill" />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  </div>
+</div>
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src='/productsImage/{{this.image}}' alt="Card image cap">
   <div class="card-body">

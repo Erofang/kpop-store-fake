@@ -31,29 +31,26 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Přihlášení</h2>
+              <h2 class="text-uppercase text-center mb-5">Login</h2>
 
               <form role="form" action="/login" method="POST">
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg">Email</label>
-                  <input type="email" name="email" id="form3Example1cg" class="form-control form-control-lg" />
-                  
+                <div class="form-outline mb-4 form-floating" >
+                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email" />
+                  <label class="form-label" for="email">Email</label>
                 </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example4cg">Heslo</label>
-                <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
-                
-              </div>
+                <div class="form-outline mb-4 form-floating" >
+                  <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Password" />
+                  <label class="form-label" for="password">Password</label>
+                </div>
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Přihlásit</button>
+                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Login</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">ještě nemáte účet? <a href="register"
-                    class="fw-bold text-body"><u>Registrovat</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">don’t have an account? <a href="register"
+                    class="fw-bold text-body"><u>Sign up</u></a></p>
 
                     {{#if message}}
 							<div class='' id="alert" role='alert'>

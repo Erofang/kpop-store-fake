@@ -31,47 +31,41 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Registrace</h2>
+              <h2 class="text-uppercase text-center mb-5">Register</h2>
 
               <form role="form" action="/register" method="POST">
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg">Jméno</label>
-                  <input type="text" name="jmeno" id="form3Example1cg" class="form-control form-control-lg" required/>
-                  
+                <div class="form-outline mb-4 form-floating">
+                  <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="nickname" required/>
+                  <label class="form-label" for="name">Nickname</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg">Příjmení</label>
-                  <input type="text" name="prijmeni" id="form3Example1cg" class="form-control form-control-lg" required/>
-                  
+                <div class="form-outline mb-4 form-floating">
+                  <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="email" required/>
+                  <label class="form-label" for="email">Email</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1cg">Email</label>
-                  <input type="email" name="email" id="form3Example1cg" class="form-control form-control-lg" required/>
-                  
+                <div class="form-outline mb-4 form-floating">
+                  <input type="number" name="tel" id="tel" class="form-control form-control-lg" min="1" max="999999999" placeholder="tel" required/>
+                  <label class="form-label" for="tel">Phone</label>
+                </div>
+                <div class="form-outline mb-4 form-floating">
+                  <input type="text" name="adress" id="adress" class="form-control form-control-lg" placeholder="adress" required/>
+                  <label class="form-label" for="adress">Adress</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example3cg">Telefon</label>
-                  <input type="number" name="mobil" id="form3Example3cg" class="form-control form-control-lg" min="100000000" max="999999999" required/>
-                  
-                </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example4cg">Heslo</label>
-                <input type="password" name="heslo" id="form3Example4cg" class="form-control form-control-lg" required/>
-                
+              <div class="form-outline mb-4 form-floating">
+                <input type="password" name="heslo" id="form3Example4cg" class="form-control form-control-lg" placeholder="password" required/>
+                <label class="form-label" for="form3Example4cg">Password</label>
               </div>
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Registrovat</button>
+                    class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body" id="tlacitko">Register</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">už máte účet? <a href="login"
-                    class="fw-bold text-body"><u>Přihlásit</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">already have an acount? <a href="login"
+                    class="fw-bold text-body"><u>Sign in</u></a></p>
 
               </form>
 
