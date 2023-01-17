@@ -23,7 +23,7 @@ function chceckNotAuthenticated(req, res, next) {
 router.get('/',  (req, res) => {
     res.render('login/login', {
         title: 'Přihlášení',
-        style: 'login.css',
+        style: 'homePage.css',
 		message: req.flash('error')
     })
 })

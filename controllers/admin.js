@@ -8,7 +8,7 @@ const Products = require('../models/Products');
 router.get('/', (req, res) => {
     res.render('admin/admin', {
         title: 'Admin',
-        style: 'admin/adminHome.css'
+        style: 'homePage.css'
     })
 })
 
@@ -17,22 +17,12 @@ router.get('/addCard', async (req, res) =>{
     const data = await Products.showMembers();
     res.render('admin/addCard', {
         title: 'Add Card',
-        style: 'admin/addCard.css',
+        style: 'homePage.css',
         cards: data
     })
 })
 
 
-/* router.post('/addCard', (req, res) =>{
-    try {
-        const {id_clena, price, image} = req.body;
-        console.log(req.body);
-        Products.addCard(id_clena, price, image);
-        res.redirect('/admin');
-    } catch {
-        res.redirect('/admin/addCard');
-    }
-}); */
 
 // Multer Middleware
 const storage = multer.diskStorage({
