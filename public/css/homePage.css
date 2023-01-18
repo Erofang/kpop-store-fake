@@ -4861,7 +4861,13 @@ body, ul, li, p, a, label, input, div {
     font-size: 18px !important;
     font-weight: 300 !important;
   }
+#navbar {
+    background-color: #dcd0ff;  
+}
 
+#navbarDropdown {
+  background-color: black;
+}
   section {
     background-color: #dcd0ff;
   }
@@ -4882,8 +4888,8 @@ body, ul, li, p, a, label, input, div {
   /* General */
   .logo { font-weight: 500 !important;}
   .text-warning {  color: #ede861 !important;}
-  .text-muted { color: #bcbcbc !important;}
-  .text-success { color: #dcd0ff !important;}
+  .text-muted { color: #fff !important;}
+  .text-success { color: white !important;}
   .text-light { color: white !important;}
   .bg-dark { background-color: #212934 !important;}
   .bg-light { background-color: #e9eef5 !important;}
@@ -4901,8 +4907,8 @@ body, ul, li, p, a, label, input, div {
   /* Nav */
   #templatemo_nav_top { min-height: 40px;}
   #templatemo_nav_top * { font-size: .9em !important;}
-  #templatemo_main_nav a { color: #dcd0ff;}
-  #templatemo_main_nav a:hover { color: #dcd0ff;}
+  #templatemo_main_nav a { color: black;}
+  #templatemo_main_nav a:hover { color: black;}
   #templatemo_main_nav .navbar .nav-icon { margin-right: 20px;}
   
   /* Hero Carousel */
@@ -4917,7 +4923,7 @@ body, ul, li, p, a, label, input, div {
   .product-wap .product-color-dot.color-dot-red { background:#f71515;}
   .product-wap .product-color-dot.color-dot-blue { background:#6db4fe;}
   .product-wap .product-color-dot.color-dot-black { background:#000000;}
-  .product-wap .product-color-dot.color-dot-light { background:#e0e0e0;}
+  .product-wap .product-color-dot.color-dot-light { background:#dcd0ff;}
   .product-wap .product-color-dot.color-dot-green { background:#dcd0ff;}
   .card.product-wap .card .product-overlay {
     background: rgba(0,0,0,.2);
@@ -4948,7 +4954,7 @@ body, ul, li, p, a, label, input, div {
   /* Carousel Hero */
   #template-mo-zay-hero-carousel .carousel-indicators li {
     margin-top: -50px;
-    background-color: #59ab6e;
+    background-color: #dcd0ff;
   }
   #template-mo-zay-hero-carousel .carousel-control-next i,
   #template-mo-zay-hero-carousel .carousel-control-prev i {
@@ -4968,8 +4974,8 @@ body, ul, li, p, a, label, input, div {
   .leaflet-control a, .leaflet-control { font-size: 10px !important;}
   .form-control { border: 1px solid #e8e8e8;}
   /* Footer */
-  #tempaltemo_footer a { color: #dcdde1;}
-  #tempaltemo_footer a:hover { color: #68bb7d;}
+  #tempaltemo_footer a { color: #fff;}
+  #tempaltemo_footer a:hover { color: #dcd0ff;}
   #tempaltemo_footer ul.footer-link-list li { padding-top: 10px;}
   #tempaltemo_footer ul.footer-icons li {
     width: 2.6em;

@@ -23,6 +23,15 @@ router.get('/Twice', async (req, res) => {
     })
 })
 
+router.get('/aespa', async (req, res) => {
+    const data = await Products.showTwice();
+    res.render('products/productsAespa', {
+        title: ' aespa Cards',
+        style: 'homePage.css',
+        cards: data 
+    })
+})
+
 
 
 module.exports = router;

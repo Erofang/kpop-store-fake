@@ -1,6 +1,6 @@
 {{#if login}}
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <nav class="navbar navbar-expand-lg navbar-light shadow" id="navbar">
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="/">
@@ -15,7 +15,7 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">About</a>
+                            <a class="nav-link" href="#about-us">About</a>
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@
                        </ul>
                       </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Contacts</a>
+                            <a class="nav-link" href="#tempaltemo_footer">Contacts</a>
                         </li>
                        
                     </ul>
@@ -58,14 +58,14 @@
     <!-- Close Header -->
 
 
-    <!-- Start Banner Hero -->
+    <!-- Start prazdny banner -->
     <div style="margin: 200px;">
         
     </div>
-    <!-- End Banner Hero -->
+    <!-- End prazdny banner -->
 
 
-    <!-- Start Categories of The Month -->
+    <!-- Start groups panel -->
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
@@ -93,11 +93,11 @@
             </div>
         </div>
     </section>
-    <!-- End Categories of The Month -->
+    <!-- End groups panel -->
 
 
-    <!-- Start Featured Product -->
-    <section class="bg-light" style="padding: 20px 0px 20px 0px;">
+    <!-- Start about us -->
+    <section class="bg-light" style="padding: 20px 0px 20px 0px;" id="about-us">
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
@@ -110,11 +110,11 @@
             <div class="row">
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">George</a>
+                            <a class="h2 text-decoration-none text-dark">George</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -123,12 +123,12 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Eugene</a>
+                            <a class="h2 text-decoration-none text-dark">Eugene</a>
                             <p class="card-text">
                                 Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                             </p>
@@ -137,11 +137,11 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Marcello</a>
+                            <a class="h2 text-decoration-none text-dark">Marcello</a>
                             <p class="card-text">
                                 Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                             </p>
@@ -151,7 +151,7 @@
             </div>
         </div>
     </section>
-    <!-- End Featured Product -->
+    <!-- End about us -->
 
 
     <!-- Start Footer -->
@@ -189,8 +189,8 @@
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="/">Home</a></li>
-                        <li><a class="text-decoration-none" href="/">About Us</a></li>
-                        <li><a class="text-decoration-none" href="/">Contact</a></li>
+                        <li><a class="text-decoration-none" href="#about-us">About Us</a></li>
+                        <li><a class="text-decoration-none" href="#tempaltemo_footer">Contact</a></li>
                     </ul>
                 </div>
 
@@ -227,7 +227,7 @@
 {{#unless login}}
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <nav class="navbar navbar-expand-lg navbar-light shadow" id="navbar">
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="/">
@@ -242,7 +242,7 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">About</a>
+                            <a class="nav-link" href="#about-us">About</a>
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -255,7 +255,7 @@
                        </ul>
                       </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Contacts</a>
+                            <a class="nav-link" href="#tempaltemo_footer">Contacts</a>
                         </li>
                        
                     </ul>
@@ -280,17 +280,17 @@
 
         </div>
     </nav>
-    <!-- Close Header -->
+    <!-- End Header -->
 
 
-    <!-- Start Banner Hero -->
+    <!-- Start prazdny banner -->
     <div style="margin: 200px;">
         
     </div>
-    <!-- End Banner Hero -->
+    <!-- End prazdny banner -->
 
 
-    <!-- Start Categories of The Month -->
+    <!-- Start groups panel -->
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
@@ -318,11 +318,11 @@
             </div>
         </div>
     </section>
-    <!-- End Categories of The Month -->
+    <!-- End groups panel -->
 
 
-    <!-- Start Featured Product -->
-    <section class="bg-light" style="padding: 20px 0px 20px 0px;">
+    <!-- Start about us -->
+    <section class="bg-light" style="padding: 20px 0px 20px 0px;" id="about-us">
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
@@ -335,11 +335,11 @@
             <div class="row">
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">George</a>
+                            <a class="h2 text-decoration-none text-dark">George</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -348,12 +348,12 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Eugene</a>
+                            <a class="h2 text-decoration-none text-dark">Eugene</a>
                             <p class="card-text">
                                 Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                             </p>
@@ -362,11 +362,11 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a>
                             <img src="/productsImage/kkona.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Marcello</a>
+                            <a class="h2 text-decoration-none text-dark">Marcello</a>
                             <p class="card-text">
                                 Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                             </p>
@@ -376,7 +376,7 @@
             </div>
         </div>
     </section>
-    <!-- End Featured Product -->
+    <!-- End about us -->
 
 
     <!-- Start Footer -->
@@ -414,8 +414,8 @@
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="/">Home</a></li>
-                        <li><a class="text-decoration-none" href="/">About Us</a></li>
-                        <li><a class="text-decoration-none" href="/">Contact</a></li>
+                        <li><a class="text-decoration-none" href="#about-us">About Us</a></li>
+                        <li><a class="text-decoration-none" href="#tempaltemo_footer">Contact</a></li>
                     </ul>
                 </div>
 
