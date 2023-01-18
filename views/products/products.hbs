@@ -22,8 +22,8 @@
                           Cards
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="products">All</a></li>
-                          <li><a class="dropdown-item" href="products/Twice">Twice</a></li>
+                          <li><a class="dropdown-item" href="/products">All</a></li>
+                          <li><a class="dropdown-item" href="/products/Twice">Twice</a></li>
                           <li><a class="dropdown-item" href="products/aespa">aespa</a></li>
                        </ul>
                       </li>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="card-body">
                                 <a class="h3 text-decoration-none">{{this.jmeno}}</a>
-                                <p class="text-center mb-0">$250.00</p>
+                                <p class="text-center mb-0">${{this.cena}}</p>
                             </div>
                         </div>
                     </div>
@@ -82,6 +82,74 @@
         
     </div>
     <!-- End Content -->
+
+       <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Kpop Store</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Zemská 661, Proboštov
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">123 456 789</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">KpopStore@seznam.cz</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Groups</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="/">Twice</a></li>
+                        <li><a class="text-decoration-none" href="/">aespa</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Links</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="/">Home</a></li>
+                        <li><a class="text-decoration-none" href="/">About Us</a></li>
+                        <li><a class="text-decoration-none" href="/">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                   
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; Kpop Store 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
 
 
 {{/if}}
@@ -156,8 +224,8 @@
                                 <img class="card-img rounded-0 img-fluid" src="/productsImage/{{this.image}}">
                             </div>
                             <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none">Oupidatat non</a>
-                                <p class="text-center mb-0">$250.00</p>
+                                <a href="shop-single.html" class="h3 text-decoration-none">{{this.jmeno}}</a>
+                                <p class="text-center mb-0">${{this.cena}}</p>
                             </div>
                         </div>
                     </div>

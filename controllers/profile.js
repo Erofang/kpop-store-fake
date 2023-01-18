@@ -62,7 +62,7 @@ router.get('/newPassword', async (req, res) => {
     let data = await User.userProfile(id)
     res.render('profile/newPassword', {
         title: 'New password',
-        style: 'profile/newPassword.css',
+        style: 'homePage.css',
         profile: data[0],
     })
 })
