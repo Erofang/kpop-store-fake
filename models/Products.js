@@ -31,6 +31,19 @@ exports.showTwice = () => {
     })
 }
 
+exports.showAespa = () => {
+    return new Promise((resolve, reject) => {
+        try {
+            let sql = `SELECT produkty.cena, produkty.image, cleni.id_clena, cleni.id_skup, cleni.jmeno, skupiny.jmeno_skup FROM cleni INNER JOIN skupiny ON cleni.id_skup = skupiny.id_skup JOIN produkty ON produkty.id_clena = cleni.id_clena AND skupiny.id_skup = 2;`
+            db.query(sql, (err, results) => {
+                if (err) throw err;
+                resolve(results);
+            })
+        } catch (err) {
+            reject(err);
+        }
+    })
+}
 
 exports.addCard = (id_clena, price, image) => {
     let sql = `INSERT INTO produkty(id_clena, cena, image) VALUES ('${id_clena}', '${price}', '${image}')`

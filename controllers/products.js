@@ -24,7 +24,7 @@ router.get('/Twice', async (req, res) => {
 })
 
 router.get('/aespa', async (req, res) => {
-    const data = await Products.showTwice();
+    const data = await Products.showAespa();
     res.render('products/productsAespa', {
         title: ' aespa Cards',
         style: 'homePage.css',
