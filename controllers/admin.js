@@ -5,10 +5,14 @@ const path = require('path');
 const Products = require('../models/Products');
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const dataTwice = await Products.showTwice()
+    const dataAespa = await Products.showAespa();
     res.render('admin/admin', {
         title: 'Admin',
-        style: 'homePage.css'
+        style: 'homePage.css',
+        twice: dataTwice,
+        aespa: dataAespa
     })
 })
 
