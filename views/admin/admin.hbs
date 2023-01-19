@@ -24,30 +24,77 @@
     </ul>
   </div>
 </nav>
-<!--tabulka pro upravu jidla-->
-     <!-- Start Content -->
-    <div class="container py-5">
-                <div class="row" style="margin: 0 auto">
-                  {{#each twice}}
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="/productsImage/{{this.image}}">
-                            </div>
-                            <div class="card-body">
-                                <a class="h3 text-decoration-none">{{this.jmeno}}</a>
-                                <p class="text-center mb-0">${{this.cena}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {{/each}}
-                    
-            </div>
-
-
-        
+<!--tabulka pro upravu Twice-->
+   <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="addProduct">
+        <a href="/admin/addCard" class="btn btn-primary" id="tlacitko">Přidat produkt</a>
+      </div>
+      <table class="table table-striped table-dark">
+        <thead>
+            
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Akce</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+            {{#each twice}}
+          <tr>
+            <td>{{this.id_clena}}</td>
+            <td>{{this.jmeno}}</td>
+            <td>$ {{this.cena}}</td>
+            <td>
+            <a href="/admin/edit/{{this.id_clena}}" type="button" class="btn btn-primary">upravit <i class="far fa-eye"></i></a>
+            <a href="/admin/deleteProduct/{{this.id_clena}}" type="button" class="btn btn-danger">smazat <i class="far fa-trash-alt"></i></a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
-    <!-- End Content -->
+  </div>
+</div>
+
+<!--tabulka pro upravu aespa-->
+   <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="addProduct">
+        <a href="/admin/addCard" class="btn btn-primary" id="tlacitko">Přidat produkt</a>
+      </div>
+      <table class="table table-striped table-dark">
+        <thead>
+            
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Akce</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+            {{#each aespa}}
+          <tr>
+            <td>{{this.id_clena}}</td>
+            <td>{{this.jmeno}}</td>
+            <td>$ {{this.cena}}</td>
+            <td>
+            <a href="/admin/edit/{{this.id_clena}}" type="button" class="btn btn-primary">upravit <i class="far fa-eye"></i></a>
+            <a href="/admin/deleteProduct/{{this.id_clena}}" type="button" class="btn btn-danger">smazat <i class="far fa-trash-alt"></i></a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 
 {{/if}}
