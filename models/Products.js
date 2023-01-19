@@ -66,10 +66,14 @@ exports.showEditCard = (id) => {
     })
 }
 
-exports.editProduct =  (id_clena, price, image, id) => {
+exports.editCard =  (id_clena, price, image, id) => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = `UPDATE produkty SET id_clena = '${id_clena}', cena = '${price}', image = '${image}' WHERE id_vyr = '${id}'`
+            let sql = `UPDATE produkty SET id_clena = '${id_clena}', cena = '${price}', image = '${image}' WHERE id_pro = '${id}'`;
+            db.query(sql, (err) => {
+                if (err) throw err;
+                resolve(true);
+            });
         } catch (err) {
             reject(err);
         }

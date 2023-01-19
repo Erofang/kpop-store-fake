@@ -57,5 +57,48 @@
     </nav>
     <!-- Close Header -->
         
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img class="rounded-circle mt-5" width="150px" src='/productImage/{{cards.image}}'>
+            </div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Úprava produktu</h4>
+                </div>
+                <form role="form" action="/admin/editCard" method="post">
+                <div class="row mt-2">
+                    <input type="hidden" id="id" name="id" value="{{cards.id_pro}}">
+                    <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="price" class="form-control" min="1" step=".01" value="{{cards.cena}}"></div>
+                </div>
+                <div class="row mt-3">
+                    <label for="druhy">Druh výrobku:</label>
+                    <select id="cleni" name="id_clena">
+                        <option value="1" name="1">Nayeon</option>
+                        <option value="2" name="2">Momo</option>
+                        <option value="3" name="3">Jihyo</option>
+                        <option value="4" name="4">Mina</option>
+                        <option value="5" name="5">Sana</option>
+                        <option value="6" name="6">Tzuyu</option>
+                        <option value="7" name="7">Jeongyeon</option>
+                        <option value="8" name="8">Dahyun</option>
+                        <option value="9" name="9">Chaeyoung</option>
+                        <option value="10" name="10">Winter</option>
+                        <option value="11" name="11">Karina</option>
+                        <option value="12" name="12">Giselle</option>
+                        <option value="13" name="13">Ningning</option>
+                    </select>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Uložit změny</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
 
 {{/if}}

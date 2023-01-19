@@ -58,8 +58,30 @@ router.get('/edit/:id', async (req, res) => {
     let id = req.params.id;
     const data = await Products.showEditCard(id);
     console.log(data);
-    res.render('admin/editCard')
+    res.render('admin/editCard', {
+        title: 'Edit Card',
+        style: 'homePage.css',
+        cards: data[0]
+    })
 })
+
+
+//uprava produktu
+router.post('/editCard', async (req, res) => {
+    const { id, id_clena, price } = req.body;
+	console.log(req.body);
+    await Products.editCard( id, id_clena, price);
+	res.redirect('/admin')
+});
+
+
+router.get('/deleteCard/:id', async (req, res) => {
+    const id = req.params.id;
+	await Products.deleteProduct(id, function (data) {
+		res.redirect('/admin');
+	});
+	res.redirect('back');
+});
 
 
 module.exports = router;
