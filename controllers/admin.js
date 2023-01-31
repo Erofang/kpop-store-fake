@@ -55,24 +55,22 @@ router.post('/addCard', upload.single('image') ,async (req, res) => {
 })
 
 router.get('/edit/:id', async (req, res) => {
-    let id = req.params.id;
+    var id = req.params.id;
     const data = await Products.showEditCard(id);
     console.log(data);
     res.render('admin/editCard', {
         title: 'Edit Card',
         style: 'homePage.css',
         cards: data[0]
-    })
+    });
 })
 
-
-//uprava produktu
 router.post('/editCard', async (req, res) => {
-    const { id, id_clena, price } = req.body;
-	console.log(req.body);
-    await Products.editCard( id, id_clena, price);
-	res.redirect('/admin')
-});
+    const { id, price, id_clena } = req.body;
+    console.log(req.body);
+    await Products.editCard(id, price, id_clena);
+    res.redirect('/admin')
+})
 
 
 router.get('/deleteCard/:id', async (req, res) => {

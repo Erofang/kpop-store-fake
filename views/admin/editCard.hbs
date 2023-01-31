@@ -15,7 +15,7 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-us">About</a>
+                            <a class="nav-link" href="/">About</a>
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,7 +71,7 @@
                 </div>
                 <form role="form" action="/admin/editCard" method="post">
                 <div class="row mt-2">
-                    <input type="hidden" id="id" name="id" value="{{cards.id_pro}}">
+                    <input type="hidden" name="id" value="{{cards.id_pro}}">
                     <div class="col-md-6"><label class="labels">Cena</label><input type="text" name="price" class="form-control" min="1" step=".01" value="{{cards.cena}}"></div>
                 </div>
                 <div class="row mt-3">

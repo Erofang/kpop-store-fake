@@ -20,7 +20,7 @@ exports.showMembers = () => {
 exports.showTwice = () => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = `SELECT produkty.cena, produkty.image, cleni.id_clena, cleni.id_skup, cleni.jmeno, skupiny.jmeno_skup FROM cleni INNER JOIN skupiny ON cleni.id_skup = skupiny.id_skup JOIN produkty ON produkty.id_clena = cleni.id_clena AND skupiny.id_skup = 1;`
+            let sql = `SELECT produkty.id_pro, produkty.cena, produkty.image, cleni.id_clena, cleni.id_skup, cleni.jmeno, skupiny.jmeno_skup FROM cleni INNER JOIN skupiny ON cleni.id_skup = skupiny.id_skup JOIN produkty ON produkty.id_clena = cleni.id_clena AND skupiny.id_skup = 1;`
             db.query(sql, (err, results) => {
                 if (err) throw err;
                 resolve(results);
@@ -34,7 +34,7 @@ exports.showTwice = () => {
 exports.showAespa = () => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = `SELECT produkty.cena, produkty.image, cleni.id_clena, cleni.id_skup, cleni.jmeno, skupiny.jmeno_skup FROM cleni INNER JOIN skupiny ON cleni.id_skup = skupiny.id_skup JOIN produkty ON produkty.id_clena = cleni.id_clena AND skupiny.id_skup = 2;`
+            let sql = `SELECT produkty.id_pro, produkty.cena, produkty.image, cleni.id_clena, cleni.id_skup, cleni.jmeno, skupiny.jmeno_skup FROM cleni INNER JOIN skupiny ON cleni.id_skup = skupiny.id_skup JOIN produkty ON produkty.id_clena = cleni.id_clena AND skupiny.id_skup = 2;`
             db.query(sql, (err, results) => {
                 if (err) throw err;
                 resolve(results);
@@ -66,10 +66,10 @@ exports.showEditCard = (id) => {
     })
 }
 
-exports.editCard =  (id_clena, price, image, id) => {
+exports.editCard =  (id, price, id_clena) => {
     return new Promise((resolve, reject) => {
         try {
-            let sql = `UPDATE produkty SET id_clena = '${id_clena}', cena = '${price}', image = '${image}' WHERE id_pro = '${id}'`;
+            let sql = `UPDATE produkty SET id_clena = '${id_clena}', cena = '${price}' WHERE id_pro = '${id}'`;
             db.query(sql, (err) => {
                 if (err) throw err;
                 resolve(true);
