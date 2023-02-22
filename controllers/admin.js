@@ -75,11 +75,11 @@ router.post('/editCard', async (req, res) => {
 
 router.get('/deleteCard/:id', async (req, res) => {
     const id = req.params.id;
-	await Products.deleteProduct(id, function (data) {
-		res.redirect('/admin');
-	});
-	res.redirect('back');
-});
+    await Products.deleteCard(id, function (data) {
+        res.redirect('/admin')
+    });
+    res.redirect('back')
+})
 
 
 module.exports = router;
