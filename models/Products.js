@@ -80,3 +80,18 @@ exports.editCard =  (id, price, id_clena) => {
     })
 }
 
+//smazání produktu
+exports.deleteCard = (ID) => {
+    return new Promise((resolve, reject) => {
+		try {
+			let sql = 'DELETE FROM produkty WHERE id_pro = ?';
+			db.query(sql, ID, (err, results) => {
+				if (err) throw err;
+				resolve(results);
+			});
+		} catch (err) {
+			reject(err);
+		}
+	});
+};
+
